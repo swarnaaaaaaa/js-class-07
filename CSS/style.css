@@ -1,0 +1,172 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root{
+    --navColor:white;
+    --bodyColor:white;
+    --textColor: #242424;
+}
+.darkmode{
+    --navColor:#242424;
+    --bodyColor: rgb(33,35,40);
+    --textColor: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6,span,p,ul,ol{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bodyColor);
+    transition: 0.03s ease;
+}
+/* --NAVBAR CSS START--- */
+nav{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 15px 0;
+    background-color: var(--navColor);
+}
+nav a{
+    color: var(--textColor);
+    margin: 0 15px;
+}
+nav .darkBtn{
+width: 40px;
+height: 40px;
+border: none;
+outline: 1px solid;
+overflow: hidden;
+}
+nav .darkBtn span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 20px;
+}
+nav .sunIcon{
+background-color: yellow;
+transition: 3.35s;
+}
+.darkmode nav .sunIcon{
+    margin-top: -100%;
+}
+nav .moonIcon{
+background-color: rgb(0, 0, 0);
+color: white;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+    color: var(--textColor);
+}
+/* ---NAVBAR CSS END--- */
+
+/* ---FAQ CSS START--- */
+section{
+    height: 100vh;
+}
+.faq {
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+}
+.faqHeader{
+    border-bottom: 1px solid #aaa;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    cursor: pointer;
+}
+.faqHeader h5{
+    font-weight: 600;
+}
+.faqCnt{
+    padding: 15px;
+}
+.faqBody{
+    max-height: 0;
+    overflow: hidden;
+}
+.faq.active .faqHeader span{
+    transform: rotate(-180deg);
+}
+.faq.active .faqBody{
+    max-height: 100vh;
+    overflow: auto;
+}
+/* ---FAQ CSS END--- */
+
+/* ---PHOTOGALLERY START--- */
+.gallImg{
+    width: 100%;
+    max-height: 250px;
+    height: 350px;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.gallImg:hover{
+    filter: brightness(80%);
+}
+.popupGallery{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: rgb(0, 0, 0, 0.7);
+   backdrop-filter: blur(5px);
+   opacity: 0;
+   visibility: hidden;
+   transition: 0.03s ease-in;
+}
+.popupGallery.active{
+    opacity: 1;
+    visibility: visible;
+}
+.popupGallery .popupImg{
+    height: 500px;
+}
+.cancelBtn{
+    position: absolute;
+    right: 50px;
+    left: 1262px;
+    margin-top: -500px;
+    cursor: pointer;
+    color: white;
+    background-color: red;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+.popupGallery .leftArrow,
+.popupGallery .rightArrow{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    position: absolute;
+    cursor: pointer;
+}
+.popupGallery .leftArrow{
+    left: 80px;
+}
+.popupGallery .rightArrow{
+    right: 80px;
+}
+/* ---PHOTOGALLERY END--- */
